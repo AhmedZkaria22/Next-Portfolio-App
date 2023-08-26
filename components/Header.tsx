@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import avt from '../Assets/images/profile.png';
+import avt from '../assets/images/profile.png';
 import {FaFacebookF, FaTwitter, FaInstagram, FaDribbble, FaBehance} from 'react-icons/fa';
 import {BsThreeDotsVertical} from 'react-icons/bs';
 import Image from 'next/image';
