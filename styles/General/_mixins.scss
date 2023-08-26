@@ -1,0 +1,14 @@
+
+@mixin gridMixin( $gTempC: 1fr, $gTempR: 1fr, $gap: 0rem ) {
+    display: grid;
+    @if $gTempC != "noVal"{ grid-template-columns: $gTempC; }
+    @if $gTempR != "noVal"{ grid-template-rows: $gTempR; }
+    @if $gap != "noVal"{ gap: $gap; }
+}
+
+
+@mixin colorMixin( $back, $clr ){
+    background-color: $back;
+    color: $clr;
+}
+

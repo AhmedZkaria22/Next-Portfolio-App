@@ -1,0 +1,90 @@
+#Portfolio{
+    h3.sectionHead{
+        span{}
+    }
+    .portfolioControll{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 10px;
+        margin-bottom: 2rem;
+        button{
+            border: none;
+            padding: 0.4rem 1rem;          
+            
+            border-bottom: 3px solid var(--primary);
+            border-radius: 0.7rem 0.7rem 0rem 0rem;
+            background-color: #fff;
+            color: var(--txt1);
+            box-shadow: rgb(0 0 0 / 6%) 0px 0px 2px 2px;
+
+            transition: all 0.3s linear 0s;
+
+            &.portBtnActive{
+                border-radius: 0.9rem 0.9rem 0.4rem 0.4rem;
+                background-color: var(--primary);
+                color: #fff;
+            }
+        }
+    }
+    
+    .row.portfolioCards{
+        --bs-gutter-y: 1.5rem !important;
+        &>div{
+            position: relative;
+            &:hover{ .portOverlay{ display: grid; } }
+            .portOverlay{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: calc(100% - 1.5rem);
+                height: 100%;
+                margin: 0px 0.75rem;
+                display: none;
+                align-items: flex-end;
+                justify-items: flex-start;
+                padding: 15px;
+                border-radius: 0.5rem;
+                .portOverlay_content{
+                    width: 100%;
+                    border-radius: 0.3rem;
+                    z-index: 5;
+                    display: flex;
+                    align-items: center;
+                    p{
+                        padding-block: 0.3rem;
+                        margin-bottom: 0;
+                        width: -webkit-fill-available;
+                        text-align: left;
+                        span{
+                            padding: 0;
+                            margin-left: 0.2rem;
+                        }
+                    }
+                    button{
+                        position: relative;
+                        top: 0px;
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 0.25rem;
+                        padding: 0;
+                        border: none;
+                        
+                        svg{
+                            color: var(--txt1);
+                        }
+                    }
+                }
+            }
+            img{ 
+                border-radius: 0.5rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991.9px) {
+    #Portfolio .portfolioControll {
+        margin-bottom: 1rem !important;
+    }
+}

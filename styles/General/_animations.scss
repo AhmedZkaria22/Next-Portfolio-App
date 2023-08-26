@@ -1,0 +1,92 @@
+// ------ Portfolio App ------
+@keyframes shapeAnmy {
+    0%{ top: 100%; transform: rotate(0deg); }
+    100%{ top: -20%; transform: rotate(360deg); }
+}
+// ------ Portfolio App ------
+
+
+//  ------ Color Palletes ------
+@keyframes pallete {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d( calc(var(--dir)*90%), 0, 0);
+        transform: translate3d(calc(var(--dir)*90%), 0, 0)
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+
+@keyframes paletteWrap {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -5%, 0);
+        transform: translate3d(0, -5%, 0)
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+
+@keyframes paletteWrapOut {
+    0% { opacity: 1; }
+    50% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3)
+    }
+    to { opacity: 0 }
+}
+
+
+@keyframes resetClr {
+    0%{ top: 3.5rem;  opacity: 0; }
+    100%{ top: 6.5rem;  opacity: 1; }
+}
+
+
+@keyframes resetClrLg {
+    from{ right: -23.7rem;  left: auto;  opacity: 0; }
+    to{ right: -27rem;  left: auto;  opacity: 1; }
+}
+
+
+
+@keyframes LDAnmy {
+    0%{ opacity: 0; }
+    100%{ opacity: 1; }
+}
+//  ------ Color Palletes ------
+
+//  ------ Header ------
+@keyframes appNavShow {    
+    0% { left: -150px; opacity: 0.5; }
+    50%{ left: -75px;  opacity: 0.7; }
+    100%{ left: 0px;  opacity: 1; }
+}
+
+@keyframes appNavHide {
+    0%{ left: 0px;  opacity: 1; }
+    50%{ left: -75px;  opacity: 0.5; }
+    100% { left: -150px; opacity: 0.0; }
+}
+//  ------ Header ------
+
+
+
+// ------ Nav ------
+@keyframes navLinkActive {
+    from{ opacity: 0.4; width: 0%; }
+    to{ opacity: 1; width: 100%; }
+}
+
+@keyframes navLinkDeActive {
+    from{ opacity: 1; width: 100%; }
+    to{ opacity: 0; width: 0%; }
+}
+// ------ Nav ------

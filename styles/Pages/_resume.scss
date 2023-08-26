@@ -1,0 +1,85 @@
+#Resume{
+    text-align: left; 
+    h3.sectionHead{
+        span{}
+    }
+    
+    &>.row:first-of-type{        
+        margin-bottom: 1rem;
+        &>div{
+            text-align: left;
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 30px;
+            span{                
+                padding: 3px 8px;                
+                border-radius: 5px;
+            }
+            p{
+                padding-top: 10px !important;
+            }
+
+            &::before{
+                content: "";
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                transition: all 0.4s ease-in-out 0s;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                top: 15px;
+                left: 4px;
+                width: 1px;
+                height: calc(100% - 20px);
+                border-radius: 2px;
+                opacity: 0.1;
+                transition: all 0.4s ease-in-out 0s;
+            }
+        }
+    }
+
+    &>.row:nth-of-type(2){
+        .skills_item{
+            margin-bottom: 15px;
+            p{
+                margin-bottom: 5px !important;
+                position: relative;
+                text-align: left;                
+                span{
+                    position: absolute;
+                    top: 3px;
+                    transition: background-color 0.4s ease-in-out 0s;
+                }
+                &::after{
+                    position: absolute;
+                    content: "%";
+                    top: 3px;     
+                    font-size: 0.9em;
+                }
+            }
+            .progressWrap{
+                height: 3px;                
+                span{
+                    display: block;
+                    height: 100%;                                        
+                }
+            }
+
+            $progressWidth: 92%,  92%,  80%,  75%,  75%,  70%,  70%,  65%;
+            @for $pw from 1 through length($progressWidth) {
+                &:nth-of-type(#{$pw}) p span{ left: calc( nth($progressWidth, $pw) - 8% );  width: nth($progressWidth, $pw); }
+                &:nth-of-type(#{$pw}) p::after{ left: calc( nth($progressWidth, $pw) - 3.5% ) }                
+            }
+
+        }
+    }
+                
+    a.sectionButton{
+        span{}
+    }
+}

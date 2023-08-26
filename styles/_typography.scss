@@ -1,0 +1,167 @@
+header{
+    .avatarWrap{
+        h1.h3{
+            font-size: calc(1.3rem + .6vw) !important;
+            @media screen and (min-width: 1200px){
+                font-size: 1.75rem !important;
+            }
+            @media screen and (max-width: 567px){
+                font-size: 24px !important;                
+            }
+            @media screen and (max-width: 450px){
+                font-size: 20px !important;                
+            }
+        }
+        h2.h6{
+            font-size: 1rem !important;
+        }
+    }
+    .socWrap{
+        a{
+            text-decoration: none !important;
+        }
+    }
+}
+
+
+#Home{
+    .contentWrap{
+        ul{
+            li{
+                span{
+                    font-weight: 600 !important;
+                }
+            }
+        }
+    }
+}
+
+
+#Resume{    
+    &>.row:first-of-type{
+        &>div{
+            span{ font-size: 12px; }
+        }
+    }
+    &>.row:nth-of-type(2){
+        .skills_item{
+            p{
+                span{ font-size: 0.9em; }
+            }
+        }
+    }
+}
+
+
+#Services{
+    text-align: left;
+    
+    &>.row:first-of-type{                
+        .serviceItem{
+            .serviceItem_svgWrap{
+                svg{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+    &>.row:nth-of-type(2){
+        .planItem{
+            .priceWrap{               
+                h3{                  
+                    font-weight: 800;
+                }
+                span{
+                    font-size: 11px;
+                }
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+    }
+                
+}
+
+
+#Portfolio{
+    .portfolioControll{
+        button{
+            text-transform: capitalize;
+        }
+    }
+    
+    .row{
+        &>div{
+            .portOverlay{
+                p{
+                    font-weight: 600;
+                    font-size: 20px;
+                    span{
+                        font-size: 14px;
+                        font-style: italic;
+                    }
+                }
+                button{
+                    svg{
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+#Blog{
+    .blogsWrap{
+        .blogsWrap_item{
+            .imgWrap{
+                span{
+                    font-weight: 700;
+                    font-size: 16px;
+                }
+            }
+            h5{
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+                text-transform: capitalize;
+                font-size: 18px;
+            }
+            ul{
+                li{
+                    font-size: 13px;
+                }
+            }            
+        }
+    }
+
+    .blogsPagination{        
+        .page-item a{
+            font-weight: 600;
+        }
+    }
+}
+
+
+#Contact{    
+    .contactForm{
+        form{
+            input, textarea{
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+
+
+// ----------------- G e n e r a l --------------------
+.sectionHead{
+    span{
+        font-weight: 700;
+    }
+}
+.sectionButton{
+    font-size: 15px;
+}    

@@ -1,0 +1,95 @@
+#Blog{
+    .blogsWrap{
+        display: grid;
+        grid-template-columns: repeat(2, calc(50% - 1.25rem));
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2.5rem;
+        .blogsWrap_item{
+            box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+            transform: translateY(0px);
+            transition: all 0.7s ease;
+            border-radius: 0.5rem;
+            height: fit-content;
+            
+            .imgWrap{
+                position: relative;
+                img{
+                    padding: 0;
+                    border: none;
+                    border-radius: 0.5rem 0.5rem 0rem 0rem;
+                }
+                span{
+                    border-radius: 50%;
+                    width: 60px;
+                    height: 60px;
+                    display: block;
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: 20px;
+                    padding-top: 7px;                    
+                    transition: all 0.7s ease;
+                    position: absolute;
+                    left: 28px;
+                    bottom: -30px;
+                }
+            }
+            h5{
+                font-family: "Poppins", sans-serif;
+                text-transform: capitalize;
+                line-height: 1.2;
+                margin-bottom: 20px !important;
+                margin-top: 45px !important;
+                text-align: left;
+                padding-inline: 30px;
+            }
+            ul{
+                padding: 0px 40px 0px 30px;
+                display: flex;
+                gap: 5px;              
+                flex-wrap: wrap;  
+                li{
+                    padding: 3px 8px;
+                    border-radius: 3px;
+                    display: inline-block;
+                }
+            }           
+            
+            &:hover{
+                .imgWrap span{ border-radius: 0.5rem; }
+            }
+        }
+    }
+
+    .blogsPagination{        
+        .page-item{
+            &:first-of-type, &:last-of-type{
+                a{
+                    padding: 0.2rem 1.01rem 0.6rem !important;
+                    span:first-of-type{
+                        font-size: 30px;
+                        line-height: 0;
+                        vertical-align: middle;
+                        font-weight: 400;
+                    }
+                }
+            }
+            a{
+                border-radius: 50%;
+                padding: 0.4rem 0.95rem 0.4rem !important;
+                margin-right: 0.3rem;
+                box-shadow: none !important;                                 
+                border: 1px solid;
+            }
+            &.blogsPaginationDisable a{ opacity: 0.5; pointer-events: none;  }
+        } 
+    }
+}
+
+
+@media screen and (max-width: 991.9px) {
+    #Blog .blogsWrap {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(auto, 1fr) !important;
+        grid-gap: 2rem !important;
+    }
+}

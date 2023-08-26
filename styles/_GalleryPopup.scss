@@ -1,0 +1,86 @@
+#GalleryPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100vw;
+    height: 100vh;
+    background-color: #040a0796;
+    display: flex;
+    flex-direction: column;
+    p{ position: relative; top: -5rem;  font-size: 2rem;  color: white; }    
+    .slick-slider{
+        width: 65%;
+        margin: 0rem auto;
+        height: 96%;
+        @media screen and (min-width: 500.01px) and (max-width: 992px) {
+            width: 80%;
+        }
+        @media screen and (max-width: 500px) {
+            width: 75%;
+        }
+
+        .slick-track .slick-slide:active {            
+            cursor: grabbing;
+        }
+
+        .slick-list{
+            height: 100%;
+            display: flex;
+            flex-direction: column;            
+            justify-content: center;
+        }    
+
+        .Gallery-img{
+            height: fit-content;
+        }
+
+        .slick-next{
+            background-image: url('../assets/images/chevron-right.svg');
+            right: -4rem !important;
+        }
+        .slick-prev{
+            background-image: url('../assets/images/chevron-left.svg');
+            left: -4rem !important;
+        }
+        .slick-next, .slick-prev{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 3rem;
+            height: 3rem;
+            &::before{ display: none !important; }
+        }
+
+    }
+    .closeBtn{
+        position: absolute;
+        bottom: auto;
+        top: 10%;
+        right: 17.5%;
+        background-color: #00000080;
+        border-radius: 0.4rem;
+        border: none;
+        transition: all 0.3s ease-in-out 0s;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        @media screen and (min-width: 500.01px) and (max-width: 992px) {
+            right: 10%;
+        }
+
+        @media screen and (max-width: 500px) {
+            right: 12.5%;
+        }
+        &>svg{
+            font-size: 1rem;
+            font-weight: 900;
+            &>path{ stroke: #fff; }
+        }
+    }
+}
+
+

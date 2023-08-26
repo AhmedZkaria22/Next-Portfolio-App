@@ -1,0 +1,234 @@
+@import '../General/mixins';
+#About{
+    .aboutInfo {
+        @include gridMixin(65% 31%, "noVal", 2rem);
+        margin-bottom: 2rem;
+        .aboutInfo_wrap {
+            border: 1px solid var(--primaryHighlight);
+            border-radius: 5px;
+            padding: 1rem;
+    
+            &>h5, &>p{ text-align: left; }
+    
+            &>h5{ font-weight: 600; }
+            &>h5 span{ color: var(--primary);  transition: all 0.4s ease-in-out 0s; }
+    
+            img{
+                display: block;
+                max-width: 100%;
+                height: 60px;
+                margin: 0rem auto 1rem 0rem;
+                width: auto;
+            }
+    
+            .aboutInfo_wrap_social {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+    
+                &>div{
+                    display: flex;
+                    gap: 1rem;
+    
+                    a{
+                        color: var(--primary);
+                        background-color: #eee;
+                        border-radius: 50%;
+                        padding: 0.2rem 0.5rem;
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    
+        .aboutInfo_facts{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .aboutInfo_facts_item{
+                border: 1px solid var(--primaryHighlight);
+                border-radius: 5px;
+                padding: 1rem;
+        
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                gap: 0.5rem;
+    
+                svg{
+                    color: var(--primary);
+                    font-size: 1.6em;
+                }
+            }
+        }
+    }
+
+
+    .slider_wrap_0{
+        position: relative;
+        width: 100%;
+        margin-bottom: 1rem;
+        .slider_wrap.testimonials_wrap{
+            position: absolute;
+            width: 100%;
+            
+            .testimonials_item{
+                box-shadow: rgb(149 157 165 / 20%) 0px 1px 19px -2px;
+                border-radius: 0.5rem;        
+                margin: 1rem 1rem 1rem;
+                padding: 1rem;
+                .qutaWrap{
+                    position: relative;
+                    background-color: var(--primary);
+                    width: 30px;    height: 30px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    &>svg{
+                        color: var(--white);         
+                        width: 22px;
+                        height: 17px;
+                    }
+                }
+                .testiTxt{
+                    @include gridMixin(auto 84px, 1fr, 0rem 1rem);
+                    margin: 1rem 0rem;
+                    p{
+                        text-align: left;
+                        margin-bottom: 0px;
+                    }
+                    img{
+                        border: 4px solid var(--primary);
+                        border-radius: 50%;
+                    } 
+                }
+                .testiBio{
+                    display: flex;
+                    column-gap: 2.5rem;
+                    p{
+                        margin-bottom: 0px;
+                        &:first-of-type{
+                            font-weight: bold;
+                        }
+                        &:last-of-type{
+                            position: relative;
+                            &::before{
+                                content: "";
+                                position: absolute;
+                                top: 9px;
+                                left: -1.5rem;
+                                width: 7px;
+                                height: 7px;
+                                border-radius: 50%;
+                                background-color: var(--primary);
+                                transition: all 0.4s ease-in-out 0s;
+                            }
+                        }
+                    }
+                }
+            }
+        
+            .slick-dots li button:before {
+                width: 23px;
+                height: 5px;
+                border-radius: 5px;
+                content: "";
+                background-color: #eee;
+                transition: all 0.4s ease-in-out 0s;
+            }
+            .slick-dots li {
+                margin: 0 8px;
+            }    
+            .slick-dots li.slick-active button:before {
+                background-color: var(--primary);
+            }
+            button.slick-arrow{ display: none !important; }
+        }
+    }
+    
+
+    .clientsWrap{
+        @include gridMixin(repeat(6, 1fr), 1fr, 1rem 1.0rem);
+    
+        &>div{
+            &>img{
+                opacity: 0.8;
+                transition: all 0.2s linear 0s;
+            }    
+            &:hover{ img{opacity: 1;} }
+        }
+    }
+}
+
+
+.slider_wrap_0{
+    @media screen and (max-width: 1199.9px){ margin-bottom: 6rem !important; }
+            
+    @media screen and (max-width: 992px){ margin-bottom: 3rem !important; }
+                    
+    @media screen and (max-width: 768px){ margin-bottom: 3rem !important; }
+            
+    @media screen and (max-width: 576px){ margin-bottom: 2rem !important; }
+            
+    @media screen and (max-width: 491.9px){ margin-bottom: 3rem !important; }
+            
+    @media screen and (max-width: 480px){ margin-bottom: 5rem !important; }
+            
+    @media screen and (max-width: 400px){ margin-bottom: 7rem !important; }
+                    
+    @media screen and (max-width: 375px){ margin-bottom: 5rem !important; }
+            
+    @media screen and (max-width: 350px){ margin-bottom: 6rem !important; }
+}
+
+.clientsWrap{
+    @media screen and (max-width: 768px) {
+        @include gridMixin(repeat(3, 1fr) !important, repeat(2, 1fr) !important, 1rem 1.0rem);
+    }
+    @media screen and (max-width: 480px) {
+        @include gridMixin(repeat(2, 1fr) !important, repeat(3, 1fr) !important, 1rem 1.0rem);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .aboutInfo {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(2, auto);
+
+        .aboutInfo_facts{
+            gap: 1rem;
+        }
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .aboutInfo_wrap_social{ flex-direction: column;     align-items: flex-start !important; }
+}
+
+@media screen and (max-width: 400px) {
+    .testiTxt{
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(2, auto) !important;
+        .testiBioWrap{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            margin-bottom: 1rem;
+
+            &>img{
+                width: 5rem;
+            }
+
+            .testiBio{
+                flex-direction: column;
+                justify-content: center;
+                & > p:last-of-type{
+                    padding-left: 1rem;
+                    &::before{ left: 0rem; }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+.ErrorPage {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: rgba(89, 89, 89, 0.0509803922);
+  overflow: hidden;
+}
+.ErrorPage > img {
+  display: block;
+  margin: -4rem auto 0rem;
+  width: 36rem;
+  height: 30rem;
+  max-height: 50vh;
+  max-width: 66vh;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .ErrorPage > img {
+    width: 30rem;
+    height: 24rem;
+  }
+}
+@media screen and (max-width: 767.9px) {
+  .ErrorPage > img {
+    width: 60vw;
+    height: 46vw;
+    margin-bottom: 2rem;
+  }
+}
+.ErrorPage > p.er404 {
+  margin-top: 1rem !important;
+}
+.ErrorPage p {
+  margin: 0px !important;
+}
+.ErrorPage p.er404 {
+  font-size: clamp(3rem, 10vw, 10rem);
+  color: var(--txt1) !important;
+  text-shadow: 0px 0px 4px var(--primary);
+}
+.ErrorPage p.vrLine {
+  font-size: clamp(2.5rem, 7vw, 7.5rem);
+  color: var(--white) !important;
+}
+.ErrorPage p.erMsg {
+  font-size: clamp(2rem, 5vw, 5rem);
+  color: hsl(210deg, 10%, 39%) !important;
+  text-shadow: 0px 0px 3px var(--txt1);
+}
+.ErrorPage a.backLink {
+  font-size: clamp(2rem, 4.5vw, 5rem);
+  color: var(--primary) !important;
+}
+.ErrorPage .errorWrap, .ErrorPage .backWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 1rem;
+     -moz-column-gap: 1rem;
+          column-gap: 1rem;
+}
+.ErrorPage .errorWrap {
+  position: relative;
+}
+.ErrorPage .backWrap {
+  position: absolute;
+  left: 0;
+  top: 70%;
+}
+.ErrorPage .backWrap p.er404 {
+  opacity: 0;
+}
+.ErrorPage .backWrap a.backLink {
+  z-index: 9;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+.ErrorPage .backWrap a.backLink span {
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  display: block;
+  text-shadow: 0px 0px 3.5px rgba(51, 51, 51, 0.6);
+}
+
+
+.spinner {
+  margin: 80px auto 0;
+  width: 100%;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: var(--primary);
+  border-radius: 100%;
+  display: inline-block;
+  margin: 0px 5px;
+}

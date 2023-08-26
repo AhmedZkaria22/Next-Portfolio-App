@@ -1,0 +1,373 @@
+@import './General/mixins';
+:root{
+    --primary: #00a3e1;
+    --primaryHighlight: #00A3E11a;
+    --txt1: #343a40;
+    --white: #ffffff;
+    --fieldBack: #eeeeee;
+    --appBack: #F8F9FA;
+    --primarySrvOut: #00a1e100;
+    --dir: 1;
+}
+
+
+body{
+    background-color: var(--appBack);
+
+    .darkMode{
+        transition: all 0.4s linear 0s;
+        header{
+            background-color: var(--white);
+            // border-bottom: 2px solid var(--txt1) !important;
+            border-bottom-color: var(--txt1) !important;
+            .avatarWrap{
+                h1.h3, h1.h6{ color: var(--primary); }
+            }
+            .socWrap{
+                p{
+                    color: var(--primary);
+                }
+                a{
+                    background-color: var(--txt1);
+                }
+            }
+            .menuIconWrap{    
+                background-color: var(--txt1);
+            }
+        }
+
+        #About .clientsWrap > div > img {
+            border-radius: 1rem 0.5rem 0.5rem 0.5rem;
+        }
+
+        #Portfolio{
+            .portfolioControll button {
+                color: var(--white);
+                font-weight: 700;
+            }
+            .row > div .portOverlay .portOverlay_content p {
+                color: var(--txt1);
+            }
+        }
+        
+        #Resume > .row:first-of-type > div{
+            &::after {
+                opacity: 0.5;
+            }
+            span {
+                background-color: #5c6670;
+                color: #fff;
+            }
+        }
+
+        #Services > .row:first-of-type .serviceItem{
+            .serviceItem_svgWrap{
+               background-color: transparent !important;
+               svg {
+                   font-size: 2rem;
+               }
+           }           
+           &:hover{
+               .serviceItem_svgWrap{
+                   background-color: var(--white) !important;
+                   svg {
+                       font-size: 1.2rem !important;
+                   }   
+               }
+           }
+        }
+
+        #Blog{
+            .blogsWrap .blogsWrap_item{
+                .imgWrap span {
+                    color: var(--txt1);
+                }
+        
+                ul li {
+                    @include colorMixin( #5c6670 !important, #fff !important );
+                }
+            }
+    
+            .blogsPagination .page-item a {
+                border-color: var(--primary);
+                @include colorMixin( var(--primary), var(--txt1) );
+            }
+        }
+
+        .sectionButton{
+            color: var(--txt1) !important;
+            span {
+                background-color: var(--txt1) !important;
+                &.sectionButton_txt {
+                    @include colorMixin( transparent !important, var(--txt1) !important );
+                }
+            }
+            &:hover{
+                color: var(--white) !important;
+                span {
+                    background-color: var(--white) !important;
+                    svg{ color: var(--txt1) !important; }
+                    &.sectionButton_txt {
+                        @include colorMixin( transparent !important, var(--white) !important );
+                    }
+                }
+            }
+        }
+
+        p, span, li, h5{ color: var(--txt1); }
+
+        
+        .colorPalletes{
+            .colorPalletes_btn{
+                @include colorMixin( var(--primary), var(--txt1) );
+            }
+            .colorPalletes_LD, .colorPalletes_reset{
+                @include colorMixin( var(--txt1), var(--white) );
+            }            
+        }
+    }
+}
+
+header{
+    background-color: var(--primary);
+    border-bottom-color: var(--primary) !important;
+    .avatarWrap{
+        h1.h3, h2.h6{ color: var(--white); }
+    }
+    .socWrap{
+        p{
+            color: var(--white);
+        }
+        a{
+            background-color: var(--white);
+            svg{
+                color: var(--primary);
+            }
+        }
+    }
+    .menuIconWrap{    
+        background-color: var(--white);
+        &>svg{
+            color: var(--primary);
+        }
+    }
+}
+
+
+nav{
+    border-right-color: var(--appBack);
+    background-color: var(--white);
+    border-right-color: var(--appBack) !important;
+    
+    button.navItem{
+        background-color: transparent;        
+        .lineWrap{
+            span{
+                background-color: var(--primary);
+            }
+        }
+        &>svg{ color: var(--txt1); }
+        &>span{ color: var(--txt1); }
+
+        &.navLinkActive{
+            &>svg{ color: var(--primary);  stroke: var(--primary); }
+            &>span{ color: var(--primary); }
+        }
+        &.navLinkDeActive{
+            &>svg{ color: var(--txt1);  stroke: var(--txt1); }
+            &>span{ color: var(--txt1); }
+        }
+    }
+}
+
+
+#ContentWrap{
+    background-color: var(--white);
+}
+
+
+#Resume{    
+    &>.row:first-of-type{
+        &>div{
+            span{
+                @include colorMixin(var(--primaryHighlight), var(--primary));
+            }
+            p{ color: var(--txt1); }
+
+            &::before{
+                background-color: var(--primary);
+            }
+
+            &::after{ background-color: var(--primary); }
+        }
+    }
+    &>.row:nth-of-type(2){
+        .skills_item{
+            p{
+                color: var(--txt1);
+            }
+            .progressWrap{
+                background-color: #eee;
+                span{
+                    background-color: var(--primary);
+                }
+            }
+        }
+    }                
+}
+
+
+#Services{
+    text-align: left;
+    
+    &>.row:first-of-type{                
+        .serviceItem{
+            border-color: var(--primaryHighlight) !important;
+            .serviceItem_svgWrap{
+                background-color: var(--primaryHighlight);
+                svg{
+                    color: var(--primary);
+                }
+            }
+            &:hover{ 
+                .serviceItem_svgWrap{ background-color: var(--white); }
+            }
+        }
+    }
+    &>.row:nth-of-type(2){
+        .planItem{
+            &::before, &::after{ background-color: var(--primaryHighlight); }
+            .priceWrap{             
+                background-color: var(--primaryHighlight);  
+                h3{ color: var(--primary); }
+                span{ color: var(--primary); }
+            }
+        }
+    }
+                
+}
+
+
+#Portfolio{    
+    .row{
+        &>div{
+            .portOverlay{                
+                background-color: #33363a3d !important;
+                .portOverlay_content{                    
+                    p{                        
+                        color: var(--white);
+                    }
+                    button{                        
+                        background-color: var(--white) !important;
+                        svg{
+                            color: #343a40;                                             
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+#Blog{
+    .blogsWrap{
+        .blogsWrap_item{
+            box-shadow: 0px 5px 20px 0px rgb(52 58 64 / 6%);
+            .imgWrap{
+                span{
+                    @include colorMixin( var(--primary), var(--white) );
+                }
+            }
+            ul{
+                li{
+                    background-color: var(--fieldBack);
+                }
+            }            
+        }
+    }
+
+    .blogsPagination{        
+        .page-item a{
+            @include colorMixin( var(--white), var(--primary) );
+            border-color: rgb(135 142 149 / 30%) !important;
+        }
+
+        .page-item:not(.blogsPaginationDisable){
+            a.page-link.active{ 
+                @include colorMixin( var(--primary), var(--white) );
+                border-color: var(--primary) !important;
+            }
+        }
+        
+        a.page-link.deActive{
+            @include colorMixin( var(--white), var(--primary) );
+        }
+    }
+}
+
+
+#Contact{
+    .contactWrap{
+        .contactInfo{
+            ul{
+                li{
+                    .svgWrap{
+                        background-color: var(--primaryHighlight);
+                        svg{
+                            color: var(--primary);
+                        }                        
+                    }
+                    p{
+                        color: var(--txt1);
+                    }
+                }
+            }
+        }    
+    }
+    
+    .contactForm{
+        form{
+            input, textarea{
+                border-color: var(--appBack) !important;
+                @include colorMixin(var(--appBack), #222222);
+                &:focus{ border-bottom-color: var(--primary) !important; }
+            }
+        }
+    }
+}
+
+// ----------------- G e n e r a l --------------------
+.sectionHead{
+    span{
+        color: var(--txt1);
+        &::after, &::before{
+            background-color: var(--primary);
+        }
+    }
+}
+.sectionButton{
+    @include colorMixin(var(--primary), var(--white));
+    span{
+        background-color: var(--white);
+        svg{
+            color: var(--primary);
+        }
+    }
+    &:hover{
+        @include colorMixin(var(--txt1), var(--white));
+        svg{ color: var(--txt1); }        
+    }
+}
+.cardHead{ color: var(--txt1); }
+.sectionSubHead{ color: var(--txt1); 
+    &::before{ background-color: var(--primary); }
+}
+
+.trnsClr{ transition: all 0.4s ease-in-out 0s; }
+// ----------------- G e n e r a l --------------------
+
+
+.shapes-basic{
+    background-color: var(--primary);
+}

@@ -1,0 +1,66 @@
+@import './General/animations';
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;    
+    border-right: 1px solid ;
+
+    &>a{
+        text-decoration: none;
+        width: 100%;
+    }
+
+    button.navItem{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 0px;
+        border: none !important;        
+        transition: all 0.3s linear 0s;
+        .lineWrap{
+            width: 1.3rem;
+            height: 2px;
+            margin-right: 2px;
+            span{
+                width: 0%;
+                height: inherit;                
+                border-radius: 5px;
+                display: block;
+                animation: none 0.3s linear 0s;
+            }
+        }
+        &>svg{
+            margin-inline: 0.5rem;
+            transition: all 0.3s linear 0s;
+        }
+        &>span{ transition: all 0.3s linear 0s; }
+
+        &.navLinkActive{
+            .lineWrap{
+                span{ animation-name: navLinkActive; width: 100%; }
+            }
+        }
+        &.navLinkDeActive{
+            .lineWrap{
+                span{ animation-name: navLinkDeActive; width: 0%; }
+            }
+        }
+
+        &:focus{ outline: none;  box-shadow: none; }
+    }
+}
+
+
+@media screen and (max-width: 767.9px) {
+    nav{
+        position: absolute;
+        bottom: 0;
+        left: -150px;
+        height: 100%;
+        width: 150px;
+        z-index: 9;
+        opacity: 0;
+    }
+}

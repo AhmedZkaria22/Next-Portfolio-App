@@ -1,0 +1,247 @@
+
+@import './General/animations';
+@mixin positionValues( $top: auto, $right: auto, $bottom: auto, $left: auto ){
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+.colorPalletes{
+    position: absolute;
+    @include positionValues(0, 100%);
+    .colorPalletes_btn{
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        border-radius: 50%;
+        position: absolute;
+        @include positionValues(0px, 0px);
+        
+        background-color: var(--white);
+        color: var(--primary);
+        border: none;
+        box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+
+        &>svg{ font-size: 2em;  background-color: inherit;  color: inherit; }
+    }
+
+    .colorPalletes_wrap{
+        border-radius: 0.5rem;
+        margin-right: 4rem;
+        transform-origin: top right;
+        flex-direction: row-reverse;
+
+        width: max-content;
+
+        @media screen and (max-width: 1819px) { transform-origin: top left !important; }
+        &.hideFeature{ display: none; }
+        &.paletteWrapAnmy{
+            animation: paletteWrap 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+
+        &.paletteWrapAnmyOut{
+            animation: paletteWrapOut 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+
+        display: flex;
+        gap: 0.7rem;
+        padding: 0.5rem;
+        border-radius: 3rem;
+
+        margin-top: -2px;
+
+        background-color: #fff !important;
+        box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+        
+        .colorPalletes_wrap_item{
+            display: block;
+            position: relative;
+            opacity: 0;
+            border-radius: 50%;
+            padding: 0rem;
+
+            span{
+                border-radius: 50%;
+                width: 2.3rem;
+                height: 2.3rem;
+                cursor: pointer;
+                display: block;
+            }
+            &.palleteAnmy{
+                animation: pallete 0.4s linear both;
+                transition: all 0.4s linear;
+            }
+        } 
+
+
+        &>.colorPalletes_reset, &>.colorPalletes_LD{
+            text-align: center;
+            border-radius: 50%;
+            border: none;
+            position: relative;
+            opacity: 1;
+            inset: 0rem !important;
+            width: 1.8rem !important;
+            height: 1.8rem !important;
+    
+            background-color: var(--white);
+            color: var(--primary);
+    
+            &>svg{ font-size: 1.5em;  background-color: inherit;  color: inherit; } 
+        }
+        
+        .colorPalletes_reset{
+            display: none;
+            transition: color 0.4s ease-in-out 0s !important;    
+            &.activeRstLg{
+                animation: resetClrLg 0.4s linear 0s;
+                transition: all 0.4s linear 0s !important;
+            }
+        }
+    
+        .colorPalletes_LD{            
+            transition: all 0.4s linear;
+            &.palleteAnmy{
+                display: block !important;  opacity: 1;
+                animation: pallete 0.4s linear both;
+            }
+            &.LDOut{ display: none !important;  opacity: 0; animation: LDAnmy 0.4s linear 0s alternate; }
+        }
+    }
+
+
+    &>.colorPalletes_reset, &>.colorPalletes_LD{
+        width: 2.5rem;
+        height: 2.5rem;
+        text-align: center;
+        border-radius: 50%;
+        border: none;
+
+        position: absolute;
+
+        background-color: var(--white);
+        color: var(--primary);
+
+        &>svg{ font-size: 1.5em;  background-color: inherit;  color: inherit; }
+    }
+    
+    &>.colorPalletes_reset{
+        @include positionValues(6.5rem, 0.3rem);
+        display: none;
+        transition: color 0.4s ease-in-out 0s !important;
+
+        &.activeRst{
+            animation: resetClr 0.4s linear 0s;
+            transition: all 0.4s linear 0s !important;
+        }
+        &.activeRstLg{
+            animation: resetClrLg 0.4s linear 0s;
+            transition: all 0.4s linear 0s !important;
+        }      
+    }
+
+    &>.colorPalletes_LD{
+        @include positionValues(3.5rem, 0.3rem);
+        animation: LDAnmy 0.4s linear 0s;
+        transition: all 0.4s linear 0s;
+
+        &.LDIn{ display: block !important;  opacity: 1;  animation-direction: normal; }
+        &.LDOut{ display: none !important;  opacity: 0; animation-direction: alternate; }        
+    }
+}
+
+@media screen and (max-width: 1819px) {
+    .colorPalletes{
+        .colorPalletes_btn{
+            @include positionValues(-4rem, -3.8rem);
+        }
+        .colorPalletes_wrap{
+            margin: 0;
+            height: auto;
+            
+            position: absolute;
+            @include positionValues(-4.2rem, auto, auto, 5rem);
+
+            flex-direction: row !important;
+        }
+
+        .colorPalletes_LD{
+            @include positionValues(-3.8rem !important, -23.7rem);
+        }
+        .colorPalletes_reset{
+            @include positionValues(-3.8rem !important, -27rem);
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .colorPalletes{
+        width: calc(100% - var(--bs-gutter-x)) !important;
+        right: calc(var(--bs-gutter-x)*0.5) !important;
+        height: auto;
+        .colorPalletes_btn{            
+            @include positionValues(-3.3rem !important, auto, auto, 0rem);            
+        }
+        .colorPalletes_wrap{            
+            @include positionValues(-3.6rem !important, auto, auto, 3rem);
+            .colorPalletes_wrap_item{
+                justify-content: center;                
+                span{
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+        }
+   
+        .colorPalletes_LD {
+            @include positionValues(-0.4rem !important, auto, auto, 4rem);
+        }
+        .colorPalletes_reset {
+            @include positionValues(-0.4rem !important, auto, auto, 7rem);
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .colorPalletes{
+        padding: 0.65rem 1.25rem !important;
+        .colorPalletes_wrap_item span{
+            width: 1.8rem !important;
+            height: 1.8rem !important;
+        }
+        .colorPalletes_btn{
+            width: 2.5rem !important;
+            height: 2.5rem !important;
+            & > svg {
+                font-size: 1.5em;
+            }
+        } 
+    }        
+}
+
+
+@media screen and (max-width: 415px) {
+    .colorPalletes{
+        .colorPalletes_wrap{
+            padding: 0.75rem 1.5rem !important;
+            flex-wrap: wrap;
+        }   
+        .colorPalletes_LD {
+            top: 0.2rem !important;                
+        }
+        .colorPalletes_reset {
+            top: 0.2rem !important;                
+        }
+    }
+    
+}
+
+@media screen and (min-width: 1818.09px) and (max-width: 1975px) {
+    .colorPalletes_wrap{
+        padding: 0.75rem 1.5rem !important;
+        flex-wrap: wrap;
+    }       
+}

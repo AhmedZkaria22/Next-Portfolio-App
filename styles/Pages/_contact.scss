@@ -1,0 +1,71 @@
+@import '../General/mixins';
+
+#Contact{
+    .contactWrap{
+        @include gridMixin( 39% 59%, "noVal", 0rem 1.5rem );
+        margin-bottom: 3rem;
+        .contactInfo{
+            h6.sectionSubHead{
+                padding-left: 0rem !important;
+                &::before{ display: none; }
+            }
+            p{ text-align: left; }
+            ul{
+                li{
+                    @include gridMixin( 2rem auto, "noVal", 0rem 0.5rem );
+                    grid-template-areas: "cSvg cP1" "cSvg cP2";
+                    align-items: center;                    
+                    &:not(:last-of-type){ margin-bottom: 1.2rem; }
+                    .svgWrap{
+                        grid-area: cSvg;
+                        width: 2rem;
+                        height: 2rem;      
+                        display: flex;        
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                    }
+                    p{
+                        margin-bottom: 0rem !important;
+                        &:first-of-type{ grid-area: cP1; font-weight: 700; }
+                        &:last-of-type{ grid-area: cP2; }
+                    }
+                }
+            }
+        }
+    
+        .contactMap{
+            iframe{}
+        }
+    }
+    
+    .contactForm{
+        form{
+            input{
+    
+            }
+            textarea{
+    
+            }
+            input, textarea{
+                border: 1px solid;
+                border-radius: 5px;
+                padding: 9px 20px;
+                transition: all 0.3s ease;
+                &:focus{
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+            button{}
+        }
+    }
+}
+
+
+@media screen and (max-width: 991.9px) {
+    #Contact .contactWrap {
+        @include gridMixin( 1fr !important, auto auto !important, 0rem 1.5rem );
+        margin-bottom: 1rem !important;
+    }
+}

@@ -1,0 +1,37 @@
+#ContentWrap{
+    display: grid;
+    grid-template-columns: 10rem auto;    
+
+    #ContentInfo{
+        height: 100%;
+        #ContentInfoInherit{
+            height: 31.1rem;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 50px 50px 20px 44px;
+            scroll-behavior: smooth;
+        }
+    }
+}
+
+@media screen and (max-width: 767.9px) {
+    #ContentWrap {
+        position: relative;
+        grid-template-columns: 1fr !important;
+    }
+    #ContentInfoInherit{ padding: 40px 20px 20px 20px !important; }
+}
+@media screen and (max-width: 500px) {
+    #ContentWrap #ContentInfo #ContentInfoInherit {
+        height: 27.1rem !important;
+    }
+}
+
+@import 'Nav';
+@import './Pages/home';
+@import './Pages/resume';
+@import './Pages/about';
+@import './Pages/services';
+@import './Pages/portfolio';
+@import './Pages/blog';
+@import './Pages/contact';
