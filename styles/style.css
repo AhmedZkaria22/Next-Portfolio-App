@@ -1517,56 +1517,56 @@ nav button.navItem:focus {
   width: 92%;
 }
 #Resume > .row:nth-of-type(2) .skills_item:nth-of-type(1) p::after {
-  left: 88.5%;
+  left: calc(84% + 20px);
 }
 #Resume > .row:nth-of-type(2) .skills_item:nth-of-type(2) p span {
   left: 84%;
   width: 92%;
 }
 #Resume > .row:nth-of-type(2) .skills_item:nth-of-type(2) p::after {
-  left: 88.5%;
+  left: calc(84% + 20px);
 }
 #Resume > .row:nth-of-type(2) .skills_item:nth-of-type(3) p span {
   left: 72%;
   width: 80%;
 }
 #Resume > .row:nth-of-type(2) .skills_item:nth-of-type(3) p::after {
-  left: 76.5%;
+  left: calc(72% + 20px);
 }
 #Resume > .row:nth-of-type(2) .skills_item:nth-of-type(4) p span {
   left: 67%;
   width: 75%;
 }
 #Resume > .row:nth-of-type(2) .skills_item:nth-of-type(4) p::after {
-  left: 71.5%;
+  left: calc(67% + 20px);
 }
 #Resume > .row:nth-of-type(2) .skills_item:nth-of-type(5) p span {
   left: 67%;
   width: 75%;
 }
 #Resume > .row:nth-of-type(2) .skills_item:nth-of-type(5) p::after {
-  left: 71.5%;
+  left: calc(67% + 20px);
 }
 #Resume > .row:nth-of-type(2) .skills_item:nth-of-type(6) p span {
   left: 62%;
   width: 70%;
 }
 #Resume > .row:nth-of-type(2) .skills_item:nth-of-type(6) p::after {
-  left: 66.5%;
+  left: calc(62% + 20px);
 }
 #Resume > .row:nth-of-type(2) .skills_item:nth-of-type(7) p span {
   left: 62%;
   width: 70%;
 }
 #Resume > .row:nth-of-type(2) .skills_item:nth-of-type(7) p::after {
-  left: 66.5%;
+  left: calc(62% + 20px);
 }
 #Resume > .row:nth-of-type(2) .skills_item:nth-of-type(8) p span {
   left: 57%;
   width: 65%;
 }
 #Resume > .row:nth-of-type(2) .skills_item:nth-of-type(8) p::after {
-  left: 61.5%;
+  left: calc(57% + 20px);
 }
 #About .aboutInfo {
   display: -ms-grid;

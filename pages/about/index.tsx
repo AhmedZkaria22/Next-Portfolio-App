@@ -3,16 +3,16 @@ import {FaFacebookF, FaTwitter, FaInstagram, FaDribbble, FaBehance, FaUser, FaCo
 import {AiFillFolderAdd} from 'react-icons/ai';
 import {VscQuote} from 'react-icons/vsc';
 
-import avt1 from '../../assets/images/avatar-1.png';
-import avt2 from '../../assets/images/avatar-2.png';
-import avt3 from '../../assets/images/avatar-3.png';
+import avt1 from '../../assets/images/avatar1.png';
+import avt2 from '../../assets/images/avatar2.png';
+import avt3 from '../../assets/images/avatar3.png';
 
-import clt1 from '../../assets/images/client-1.jpg';
-import clt2 from '../../assets/images/client-2.jpg';
-import clt3 from '../../assets/images/client-3.jpg';
-import clt4 from '../../assets/images/client-4.jpg';
-import clt5 from '../../assets/images/client-5.jpg';
-import clt6 from '../../assets/images/client-6.jpg';
+import clt1 from '../../assets/images/client1.jpg';
+import clt2 from '../../assets/images/client2.jpg';
+import clt3 from '../../assets/images/client3.jpg';
+import clt4 from '../../assets/images/client4.jpg';
+import clt5 from '../../assets/images/client5.jpg';
+import clt6 from '../../assets/images/client6.jpg';
 
 
 import Slider from "react-slick";

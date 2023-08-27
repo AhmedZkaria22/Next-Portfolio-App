@@ -73,7 +73,8 @@
             $progressWidth: 92%,  92%,  80%,  75%,  75%,  70%,  70%,  65%;
             @for $pw from 1 through length($progressWidth) {
                 &:nth-of-type(#{$pw}) p span{ left: calc( nth($progressWidth, $pw) - 8% );  width: nth($progressWidth, $pw); }
-                &:nth-of-type(#{$pw}) p::after{ left: calc( nth($progressWidth, $pw) - 3.5% ) }                
+                // &:nth-of-type(#{$pw}) p::after{ left: calc( nth($progressWidth, $pw) - 3.5% ) }                
+                &:nth-of-type(#{$pw}) p::after{ left: calc( (nth($progressWidth, $pw) - 3.5%) + 20px ) }
             }
 
         }
