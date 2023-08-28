@@ -80,15 +80,18 @@ function About() {
         [<FaCertificate className='trnsClr' />, "8 Years job experience"]
     ];
 
-    const testmonialsDt: [StaticImageData, string, string, string][] = [
+    const testmonialsDt: [StaticImageData, string, string, string, string][] = [
         [ avt1, "Mariam Mamado",  "CEO Founder",
-            "Allison did absolutely excellent work for me designing a logo, website, and other promotional material and did it quickly! I will use Allison every time I have a need. I can’t say enough positive things about the experience"
+            "Allison did absolutely excellent work for me designing a logo, website, and other promotional material and did it quickly! I will use Allison every time I have a need. I can’t say enough positive things about the experience",
+            "../../assets/images/avatar1.png"
         ],
         [ avt2, "Allison Smith",  "CEO Founder",
-            "I’ve worked with Ayoub on multiple projects, including the complete overhaul and re-design of our website. He is highly skilled and very creative. Always quick to respond to requests and incredibly thorough. Thanks, Ayoub!"
+            "I’ve worked with Ayoub on multiple projects, including the complete overhaul and re-design of our website. He is highly skilled and very creative. Always quick to respond to requests and incredibly thorough. Thanks, Ayoub!",
+            "../../assets/images/avatar2.png"
         ],
         [ avt3, "Ayoub Martin",  "Web Designer",
-            "I’ve been working with Mariam exclusively since 2014 and it has been great! He works fast and consistently delivers high-quality work. He takes my vision and translates it into a professional design that functions for my business goals."
+            "I’ve been working with Mariam exclusively since 2014 and it has been great! He works fast and consistently delivers high-quality work. He takes my vision and translates it into a professional design that functions for my business goals.",
+            "../../assets/images/avatar3.png"
         ]
     ];
 
@@ -180,7 +183,6 @@ function About() {
                             {
                                 socis.map( (soc, c) => {
                                     return(
-                                        // <a href={soc[2]} key={c} className='trnsClr' title={soc[1]}> {soc[0]} </a>
                                         <Link href={soc[2]} key={c} className='trnsClr' target='_blank' rel="noreferrer" title={soc[1]}> {soc[0]} </Link>
                                     )
                                 } )
@@ -224,13 +226,13 @@ function About() {
                                                 ? <>
                                                     <div className="testiTxt">
                                                         <TestiP txt={tst[3]} />
-                                                        <TestiImg src={tst[0]} ndx={t} />
+                                                        <TestiImg src={tst[0]} ndx={t} baseSrc={tst[4]} />
                                                     </div>
                                                     <TestiBio name={tst[1]} job={tst[2]} />
                                                 </>
                                                 : <div className="testiTxt">
                                                     <div className="testiBioWrap">
-                                                            <TestiImg src={tst[0]} ndx={t} />
+                                                            <TestiImg src={tst[0]} ndx={t} baseSrc={tst[4]} />
                                                             <TestiBio name={tst[1]} job={tst[2]} />
                                                     </div>
                                                     <TestiP txt={tst[3]} /> 
@@ -248,16 +250,14 @@ function About() {
             <h6 className='sectionSubHead clients'>My Clients</h6>
             <div className="clientsWrap">{
                 clts.map( (clt, c) => {
-                    // return( <motion.img src={clt} alt="" key={c} className='img-fluid' variants={vr4}    custom={c}
-                    //             initial='hidden'      whileInView='visible'      viewport={{ once: true }}
-                    //         /> 
-                    //     )
-
                     return( 
                         <motion.div variants={vr4}    custom={c} key={c}
                             initial='hidden'      whileInView='visible'      viewport={{ once: true }}
                         >
-                            <Image src={clt} alt={`client-${c+1}`} className='img-fluid' />
+                            <Image src={clt} alt={`client-${c+1}`} className='img-fluid' 
+                                width={400} height={300} loading='lazy' 
+                                blurDataURL={`data:../../assets/images/client${c+1}.jpg`}
+                            />
                         </motion.div>
                     )
 

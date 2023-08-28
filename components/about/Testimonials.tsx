@@ -5,8 +5,10 @@ export function TestiP({txt}: {txt: string}){
     return <p> {txt} </p>
 }
 
-export function TestiImg({src, ndx}:{src: string|StaticImageData, ndx: number}){
-    return <Image src={src} alt={`testi-img${ndx}`} className='img-fluid trnsClr' />
+export function TestiImg({src, ndx, baseSrc}:{src: string|StaticImageData, ndx: number, baseSrc: string}){
+    return <Image src={src} alt={`testi-img${ndx}`} className='img-fluid trnsClr' width={400} height={300} loading='lazy' 
+        blurDataURL={`data:${baseSrc}`}
+    />
 }
 
 export function TestiBio({ name, job }:{name: string, job: string}){
