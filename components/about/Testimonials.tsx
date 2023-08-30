@@ -6,7 +6,7 @@ export function TestiP({txt}: {txt: string}){
 }
 
 export function TestiImg({src, ndx}:{src: string|StaticImageData, ndx: number}){
-    return <Image src={src} alt={`testi-img${ndx}`} className='img-fluid trnsClr'/>
+    return <Image src={src} alt={`testi-img${ndx}`} className='img-fluid trnsClr' style={{objectFit: 'none'}}/>
 }
 
 export function TestiBio({ name, job }:{name: string, job: string}){

@@ -4,9 +4,9 @@ import {AiFillFolderAdd} from 'react-icons/ai';
 import {VscQuote} from 'react-icons/vsc';
 
 // import avt from '../../assets/images/profile.png';
-import avtO from '../../assets/images/avatar1.jpg';
-import avtT from '../../assets/images/avatar2.jpg';
-import avtR from '../../assets/images/avatar3.jpg';
+import avt1 from '../../assets/images/avatar1.jpg';
+import avt2 from '../../assets/images/avt2.png';
+import avt3 from '../../assets/images/avatar3.jpg';
 
 import clt1 from '../../assets/images/client1.jpg';
 import clt2 from '../../assets/images/client2.jpg';
@@ -83,13 +83,13 @@ function About() {
 
 
     const testmonialsDt: [StaticImageData, string, string, string][] = [
-        [ avtO, "Mariam Mamado",  "CEO Founder",
+        [ avt1, "Mariam Mamado",  "CEO Founder",
             "Allison did absolutely excellent work for me designing a logo, website, and other promotional material and did it quickly! I will use Allison every time I have a need. I can’t say enough positive things about the experience"
         ],
-        [ avtT, "Allison Smith",  "CEO Founder",
+        [ avt2, "Allison Smith",  "CEO Founder",
             "I’ve worked with Ayoub on multiple projects, including the complete overhaul and re-design of our website. He is highly skilled and very creative. Always quick to respond to requests and incredibly thorough. Thanks, Ayoub!"            
         ],
-        [ avtR, "Ayoub Martin",  "Web Designer",
+        [ avt3, "Ayoub Martin",  "Web Designer",
             "I’ve been working with Mariam exclusively since 2014 and it has been great! He works fast and consistently delivers high-quality work. He takes my vision and translates it into a professional design that functions for my business goals."            
         ]
     ];
