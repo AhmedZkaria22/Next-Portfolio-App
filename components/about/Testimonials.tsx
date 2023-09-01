@@ -5,7 +5,7 @@ export function TestiP({txt}: {txt: string}){
     return <p> {txt} </p>
 }
 
-export function TestiImg({src, ndx}:{src: string|StaticImageData, ndx: number}){
+export function TestiImg({src, ndx}:{src: string|StaticImageData|any, ndx: number}){
     return <Image src={src} alt={`testi-img${ndx}`} className='img-fluid trnsClr'
         width={400} height={300}
     />
