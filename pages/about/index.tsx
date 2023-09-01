@@ -81,18 +81,20 @@ function About() {
     ];
 
 
-    const testmonialsDt: [StaticImageData, string, string, string][] = [
-        [ avt1, "Mariam Mamado",  "CEO Founder",
+    const testmonialsDt: [string, string, string, string][] = [
+        [ "/_next/static/media/avatar1.72fca258.png", "Mariam Mamado",  "CEO Founder",
             "Allison did absolutely excellent work for me designing a logo, website, and other promotional material and did it quickly! I will use Allison every time I have a need. I can’t say enough positive things about the experience"
         ],
-        [ avt2, "Allison Smith",  "CEO Founder",
+        [ "/_next/static/media/avatar2.9129af07.png", "Allison Smith",  "CEO Founder",
             "I’ve worked with Ayoub on multiple projects, including the complete overhaul and re-design of our website. He is highly skilled and very creative. Always quick to respond to requests and incredibly thorough. Thanks, Ayoub!"            
         ],
-        [ avt3, "Ayoub Martin",  "Web Designer",
+        [ "/_next/static/media/avatar3.007049b0.png", "Ayoub Martin",  "Web Designer",
             "I’ve been working with Mariam exclusively since 2014 and it has been great! He works fast and consistently delivers high-quality work. He takes my vision and translates it into a professional design that functions for my business goals."            
         ]
     ];
-
+    
+    
+    
     const clts: string | undefined | any[] = [clt1, clt2, clt3, clt4, clt5, clt6];
     const aboutChildR = useRef<HTMLDivElement>(null);
     const aboutParentR = useRef<HTMLElement>(null);
@@ -215,7 +217,7 @@ function About() {
                             testmonialsDt.map( (tst, t) => {
                                 return(
                                     <div className="testimonialWrap" key={t}>
-                                        <>{console.log(tst[0].src)}</>
+                                        <>{console.log(tst[0])}</>
                                         <div className='testimonials_item'>
                                             <div className="qutaWrap trnsClr">
                                                 <VscQuote/>
@@ -225,13 +227,13 @@ function About() {
                                                 ? <>
                                                     <div className="testiTxt">
                                                         <TestiP txt={tst[3]} />
-                                                        <TestiImg src={tst[0].src} ndx={t} />
+                                                        <TestiImg src={tst[0]} ndx={t} />
                                                     </div>
                                                     <TestiBio name={tst[1]} job={tst[2]} />
                                                 </>
                                                 : <div className="testiTxt">
                                                     <div className="testiBioWrap">
-                                                            <TestiImg src={tst[0].src} ndx={t} />
+                                                            <TestiImg src={tst[0]} ndx={t} />
                                                             <TestiBio name={tst[1]} job={tst[2]} />
                                                     </div>
                                                     <TestiP txt={tst[3]} /> 
