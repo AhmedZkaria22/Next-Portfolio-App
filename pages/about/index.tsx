@@ -81,20 +81,19 @@ function About() {
     ];
 
 
-    const testmonialsDt: [StaticImageData, string, string, string][] = [
-        [ avt1, "Mariam Mamado",  "CEO Founder",
+    const [testmonialsAvt, setTestmonialsAvt]:[StaticImageData[]|object[], Function] = useState([avt1, avt2, avt3]);
+    const testmonialsDt: [string, string, string][] = [
+        [ "Mariam Mamado",  "CEO Founder",
             "Allison did absolutely excellent work for me designing a logo, website, and other promotional material and did it quickly! I will use Allison every time I have a need. I can’t say enough positive things about the experience"
         ],
-        [ avt2, "Allison Smith",  "CEO Founder",
+        [ "Allison Smith",  "CEO Founder",
             "I’ve worked with Ayoub on multiple projects, including the complete overhaul and re-design of our website. He is highly skilled and very creative. Always quick to respond to requests and incredibly thorough. Thanks, Ayoub!"            
         ],
-        [ avt3, "Ayoub Martin",  "Web Designer",
+        [ "Ayoub Martin",  "Web Designer",
             "I’ve been working with Mariam exclusively since 2014 and it has been great! He works fast and consistently delivers high-quality work. He takes my vision and translates it into a professional design that functions for my business goals."            
         ]
     ];
-    
-    
-    
+        
     const clts: string | undefined | any[] = [clt1, clt2, clt3, clt4, clt5, clt6];
     const aboutChildR = useRef<HTMLDivElement>(null);
     const aboutParentR = useRef<HTMLElement>(null);
@@ -144,6 +143,10 @@ function About() {
     useEffect(()=>{
         setAboutLs(true);
     },[])
+    
+    useEffect(()=>{
+        setTestmonialsAvt([avt1, avt2, avt3]);
+    }, [aboutLs])
 
     useLayoutEffect(() => {
         handel_navlink_source('About');
@@ -152,7 +155,7 @@ function About() {
     return (
         <>
         {
-        aboutLs && <>
+        (aboutLs && testmonialsAvt[0]) && <>
         <Head>
             <meta name="og:title" content="Next | Portfolio Card - About" />
             <meta name="og:description" content="Hi! , I am a graphic designer, and I'm very passionate and dedicated to my work. With 8 years experience as a professional graphic designer" />
@@ -217,7 +220,7 @@ function About() {
                             testmonialsDt.map( (tst, t) => {
                                 return(
                                     <div className="testimonialWrap" key={t}>
-                                        <>{console.log(tst[0])}</>
+                                        <>{console.log(testmonialsAvt[t])}</>
                                         <div className='testimonials_item'>
                                             <div className="qutaWrap trnsClr">
                                                 <VscQuote/>
@@ -226,17 +229,17 @@ function About() {
                                                 wl >= 400.01
                                                 ? <>
                                                     <div className="testiTxt">
-                                                        <TestiP txt={tst[3]} />
-                                                        <TestiImg src={tst[0]} ndx={t} />
+                                                        <TestiP txt={tst[2]} />
+                                                        <TestiImg src={testmonialsAvt[t]} ndx={t} />
                                                     </div>
-                                                    <TestiBio name={tst[1]} job={tst[2]} />
+                                                    <TestiBio name={tst[0]} job={tst[1]} />
                                                 </>
                                                 : <div className="testiTxt">
                                                     <div className="testiBioWrap">
-                                                            <TestiImg src={tst[0]} ndx={t} />
-                                                            <TestiBio name={tst[1]} job={tst[2]} />
+                                                            <TestiImg src={testmonialsAvt[t]} ndx={t} />
+                                                            <TestiBio name={tst[0]} job={tst[1]} />
                                                     </div>
-                                                    <TestiP txt={tst[3]} /> 
+                                                    <TestiP txt={tst[2]} /> 
                                                 </div>
                                             }
                                         </div>
