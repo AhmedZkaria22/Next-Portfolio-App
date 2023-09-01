@@ -3,10 +3,9 @@ import {FaFacebookF, FaTwitter, FaInstagram, FaDribbble, FaBehance, FaUser, FaCo
 import {AiFillFolderAdd} from 'react-icons/ai';
 import {VscQuote} from 'react-icons/vsc';
 
-// import avt from '../../assets/images/profile.png';
-import avt1 from '../../assets/images/avatar1.jpg';
-import avt2 from '../../assets/images/avt2.png';
-import avt3 from '../../assets/images/avatar3.jpg';
+import avt1 from '../../assets/images/avatar1.png';
+import avt2 from '../../assets/images/avatar2.png';
+import avt3 from '../../assets/images/avatar3.png';
 
 import clt1 from '../../assets/images/client1.jpg';
 import clt2 from '../../assets/images/client2.jpg';
@@ -216,6 +215,7 @@ function About() {
                             testmonialsDt.map( (tst, t) => {
                                 return(
                                     <div className="testimonialWrap" key={t}>
+                                        <>{console.log(tst[0].src)}</>
                                         <div className='testimonials_item'>
                                             <div className="qutaWrap trnsClr">
                                                 <VscQuote/>
@@ -225,13 +225,13 @@ function About() {
                                                 ? <>
                                                     <div className="testiTxt">
                                                         <TestiP txt={tst[3]} />
-                                                        <TestiImg src={tst[0]} ndx={t} />
+                                                        <TestiImg src={tst[0].src} ndx={t} />
                                                     </div>
                                                     <TestiBio name={tst[1]} job={tst[2]} />
                                                 </>
                                                 : <div className="testiTxt">
                                                     <div className="testiBioWrap">
-                                                            <TestiImg src={tst[0]} ndx={t} />
+                                                            <TestiImg src={tst[0].src} ndx={t} />
                                                             <TestiBio name={tst[1]} job={tst[2]} />
                                                     </div>
                                                     <TestiP txt={tst[3]} /> 
