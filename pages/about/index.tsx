@@ -227,13 +227,13 @@ function About() {
                                                 ? <>
                                                     <div className="testiTxt">
                                                         <TestiP txt={tst[3]} />
-                                                        <TestiImg src={tst[0].blurDataURL} ndx={t} />
+                                                        <TestiImg src={tst[0]} ndx={t} />
                                                     </div>
                                                     <TestiBio name={tst[1]} job={tst[2]} />
                                                 </>
                                                 : <div className="testiTxt">
                                                     <div className="testiBioWrap">
-                                                            <TestiImg src={tst[0].blurDataURL} ndx={t} />
+                                                            <TestiImg src={tst[0]} ndx={t} />
                                                             <TestiBio name={tst[1]} job={tst[2]} />
                                                     </div>
                                                     <TestiP txt={tst[3]} /> 
