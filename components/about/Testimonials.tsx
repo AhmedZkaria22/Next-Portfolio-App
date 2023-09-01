@@ -1,6 +1,5 @@
 import Image, { StaticImageData } from 'next/image'
 import React from 'react'
-import avt from '../../assets/images/profile.png';
 
 export function TestiP({txt}: {txt: string}){
     return <p> {txt} </p>

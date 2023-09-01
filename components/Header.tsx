@@ -34,8 +34,7 @@ function Header() {
         <header>
 
             <div className="avatarWrap">
-                <Image src={avt} alt="avatar img" />
-                <>{console.log(avt)}</>
+                <Image src={avt} alt="avatar img" />                
                 <div className='text-start'>
                     <h1 className='mb-0 h3'>Surzil Dong</h1>
                     <h2 className='h6'>GRAPHIC DESIGNER</h2>

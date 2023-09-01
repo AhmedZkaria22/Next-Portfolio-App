@@ -2559,7 +2559,7 @@ nav button.navItem:focus {
 }
 .colorPalletes {
   position: absolute;
-  top: 0;
+  top: 10px;
   right: 100%;
   bottom: auto;
   left: auto;
@@ -2828,6 +2828,7 @@ nav button.navItem:focus {
 @media screen and (max-width: 500px) {
   .colorPalletes {
     padding: 0.65rem 1.25rem !important;
+    top: 0px !important;
   }
   .colorPalletes .colorPalletes_wrap_item span {
     width: 1.8rem !important;

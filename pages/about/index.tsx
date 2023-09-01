@@ -1,39 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef, useMemo, ReactElement, useLayoutEffect } from 'react';
 import {FaFacebookF, FaTwitter, FaInstagram, FaDribbble, FaBehance, FaUser, FaCoffee, FaSmile, FaMedal, FaCertificate} from 'react-icons/fa';
 import {AiFillFolderAdd} from 'react-icons/ai';
 import {VscQuote} from 'react-icons/vsc';
-
+import { motion } from 'framer-motion';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
+import Head from 'next/head';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { about_cltVr, about_fctVr, about_infoVr, about_tstVr, App_SectionHead, handel_navlink_source } from '../../AZ-Framer';
+import SectionHead from '../../components/SectionHead';
+import { TestiBio, TestiImg, TestiP } from '../../components/about/Testimonials';
 import avt1 from '../../assets/images/avatar1.png';
 import avt2 from '../../assets/images/avatar2.png';
 import avt3 from '../../assets/images/avatar3.png';
-
 import clt1 from '../../assets/images/client1.jpg';
 import clt2 from '../../assets/images/client2.jpg';
 import clt3 from '../../assets/images/client3.jpg';
 import clt4 from '../../assets/images/client4.jpg';
 import clt5 from '../../assets/images/client5.jpg';
 import clt6 from '../../assets/images/client6.jpg';
-
-
-import Slider from "react-slick";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 import signature from '../../assets/images/signature.png'
-import { useEffect } from 'react';
-import { useRef } from 'react';
-import { useMemo } from 'react';
-import { motion } from 'framer-motion';
-import { about_cltVr, about_fctVr, about_infoVr, about_tstVr, App_SectionHead, handel_navlink_source } from '../../AZ-Framer';
 
-import { ReactElement } from 'react';
-import Image, { StaticImageData } from 'next/image';
-import Link from 'next/link';
-import SectionHead from '../../components/SectionHead';
-import { TestiBio, TestiImg, TestiP } from '../../components/about/Testimonials';
-import { useLayoutEffect } from 'react';
-import Head from 'next/head';
 
 interface responsive_setting{
     dots: boolean,
@@ -94,7 +83,7 @@ function About() {
         ]
     ];
         
-    const clts: string | undefined | any[] = [clt1, clt2, clt3, clt4, clt5, clt6];
+    const [clts, setClts]:[StaticImageData[]|object[]|any[], Function] = useState([clt1, clt2, clt3, clt4, clt5, clt6]);
     const aboutChildR = useRef<HTMLDivElement>(null);
     const aboutParentR = useRef<HTMLElement>(null);
     const [aboutLs, setAboutLs]:[string|boolean, Function] = useState(false);
@@ -144,10 +133,6 @@ function About() {
         setAboutLs(true);
     },[])
     
-    useEffect(()=>{
-        setTestmonialsAvt([avt1, avt2, avt3]);
-    }, [aboutLs])
-
     useLayoutEffect(() => {
         handel_navlink_source('About');
     }, []);
@@ -220,7 +205,6 @@ function About() {
                             testmonialsDt.map( (tst, t) => {
                                 return(
                                     <div className="testimonialWrap" key={t}>
-                                        <>{console.log(testmonialsAvt[t])}</>
                                         <div className='testimonials_item'>
                                             <div className="qutaWrap trnsClr">
                                                 <VscQuote/>
