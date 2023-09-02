@@ -24,7 +24,7 @@ By: *Ahmed Zakaria*
   * Change app theme pallette
   * Smooth motion on scroll
   * Seo Frindly : backlinks, og meta tags
-  * Design inspiration from [envato market](https://themeforest.net/category/site-templates/personal/virtual-business-card#content)
+  * Design inspiration from [envato market - dongo](https://themeforest.net/item/dongo-vcard-resume-cv-template/26514199)
 
 
 
